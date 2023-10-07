@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.button {
+    padding: 8px 24px;
+    font-size: $font-medium;
+    border-radius: 25px;
+    background-color: $primary-blue;
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+    color: $primary-white;
+    cursor: pointer;
+    border: none;
+    
+
+    &:hover {
+        background-color: $darker-blue;
+    }
+
+    &:disabled {
+        background-color: $primary-grey;
+    }
+}

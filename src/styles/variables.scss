@@ -1,0 +1,33 @@
+// colours
+
+$background-color: #1F2137;
+$primary-blue: #008DED;
+$darker-blue: #006BCB;
+$primary-orange: #EB802A;
+$primary-white: #fff;
+$primary-grey: #999;
+$primary-black: #333;
+$primary-red: #ee1111;
+
+// brakpoints
+
+$desktop: 1920px;
+$tablet: 1020px;
+$mobile: 720px;
+
+// sizes
+
+$font-large: 48px;
+$font-medium: 24px;
+$font-small: 16px;
+
+
+// mixins
+
+@mixin tablet {
+    @media (max-width: calc($tablet - 1px))  { @content; }
+}
+
+@mixin mobile {
+    @media (max-width: calc($mobile - 1px))  { @content; }
+}

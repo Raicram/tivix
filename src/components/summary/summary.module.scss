@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+
+.summaryWrapper {
+    max-width: 350px;
+
+    h2 {
+        font-size: $font-medium;
+        font-weight: 700;
+    }
+}
+
+.imageWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.figName {
+    text-align: center;
+}
+
+.part {
+    display: flex;
+    align-items: center;
+
+    p {
+        margin: 0;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 24px;
+        font-size: $font-small;
+    }
+
+    .numPart {
+        color: $primary-orange;
+    }
+
+    .partData {
+        margin-left: 10px;
+
+    }
+}

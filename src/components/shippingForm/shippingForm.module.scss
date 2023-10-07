@@ -1,0 +1,82 @@
+@import '../../styles/variables.scss';
+
+.summaryWrapper {
+    min-height: calc(80vh - 50px);
+    padding: 25px;
+    background-color: $primary-white;
+    color: $primary-black;
+    border-radius: 25px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    button {
+        width: 200px;
+    }
+}
+
+.summaryBodyWrapper {
+    height: 80%;
+}
+
+.formWrapper {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    column-gap: 25px;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+        padding: 25px 0;
+    }
+}
+
+.inputWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px 25px 50px 0;
+    gap: 25px;
+
+    @include tablet {
+        padding: 25px 0;
+    }
+}
+@mixin Input {
+    width: calc(100% - 20px);
+    height: 34px;
+    font-size: $font-medium;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.input {
+    @include mobile {
+        grid-column: 1/3;
+    }
+    width: 100%;
+    margin: 0 auto;
+    input {
+        @include Input();
+    }
+
+    p {
+        margin: 5px 0;
+    }
+}
+
+.inputWide {
+    grid-column: 1/3;
+    width: 100%;
+    margin: 0 auto;
+    input {
+        @include Input();
+    }
+
+    p {
+        margin: 5px 0;
+    }
+}
+
+.error {
+    color: $primary-red;
+}

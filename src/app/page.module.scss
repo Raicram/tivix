@@ -1,0 +1,27 @@
+@import '../styles/variables.scss';
+
+
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .title {
+        color: $primary-white;
+        font-size: $font-large;
+        text-align: center;
+    }
+
+    .link {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    @include tablet {
+        padding: 25px 0;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .title {
+        color: $primary-white;
+        font-size: $font-large;
+        text-align: center;
+    }
+
+    .minifigWrapper {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+
+        @include tablet {
+            justify-content: center;
+        }
+    }
+
+    .link {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+
+        &:focus, &:active, &:hover {
+            -webkit-tap-highlight-color: transparent;
+
+        }
+    }
+}
