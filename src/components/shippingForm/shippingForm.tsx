@@ -8,13 +8,18 @@ import { Rebrickable } from "@/types/types";
 import { sendFormData } from "@/services/apiService";
 import { useRouter } from 'next/navigation'
 
-export const ShippingForm = ({children}: ScriptProps) => {
+export const ShippingForm = ({children, id}: ScriptProps) => {
     const router = useRouter();
-    const { register, handleSubmit, formState: { errors } } = useForm<Rebrickable.ShippingFormData>();
+    const { register, handleSubmit, formState: { errors, isDirty, isValid } } = useForm<Rebrickable.ShippingFormData>({
+        mode: 'onChange'
+    });
     const requireMsg: string = 'This is required...';    
 
     const onSubmit = async (data: Rebrickable.ShippingFormData) => {
-        const res = await sendFormData(data);
+        const res = await sendFormData({
+            ...data,
+            figure_id: id
+        });
         if(res.message === 'success') {
             router.push('/')
         }
@@ -95,7 +100,7 @@ export const ShippingForm = ({children}: ScriptProps) => {
                     <div className="summaryBodyWrapper">
                         {children}
                     </div>
-                    <Button type='submit'>
+                    <Button type='submit' disabled={!isDirty || !isValid}>
                         SUBMIT
                     </Button>
                 </div>

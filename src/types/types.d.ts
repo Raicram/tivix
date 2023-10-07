@@ -62,6 +62,7 @@ export namespace Rebrickable {
       city: string;
       state: string;
       zipcode: string | number;
+      figure_id: string | undefined;
     }
 
     interface ShippingResponse{
